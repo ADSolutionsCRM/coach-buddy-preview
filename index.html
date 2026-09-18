@@ -13,7 +13,7 @@
 :root{--bg:#070707;--panel:#0d0f11;--text:#f7f7f3;--muted:#9a9d99;--yellow:#ffc400;--line:#25282b;--max:1360px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}a{color:inherit;text-decoration:none}img{display:block;width:100%}.wrap{width:min(var(--max),calc(100% - 42px));margin:auto}
 .preview{position:fixed;top:8px;left:50%;transform:translateX(-50%);z-index:999;background:rgba(0,0,0,.75);border:1px solid #303338;padding:7px 12px;border-radius:999px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#b8bbb6;backdrop-filter:blur(12px)}
-header{position:fixed;left:0;right:0;top:0;z-index:90;padding:32px 0 14px;background:linear-gradient(#050505e8,#05050592,transparent)}nav{display:flex;align-items:center;justify-content:space-between;gap:24px}.logo{width:115px;height:66px;object-fit:contain}.links{display:flex;gap:26px;font:700 15px/1 "Barlow Condensed";text-transform:uppercase}.links a:hover{color:var(--yellow)}.actions{display:flex;align-items:center;gap:10px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border:1px solid #555b60;border-radius:4px;font:800 15px/1 "Barlow Condensed";text-transform:uppercase;letter-spacing:.04em}.btn.yellow{background:var(--yellow);border-color:var(--yellow);color:#080808}.lang{border:1px solid #3a3d40;padding:10px 12px;font:800 12px/1 "Barlow Condensed"}
+header{position:fixed;left:0;right:0;top:0;z-index:90;padding:32px 0 14px;background:linear-gradient(#050505e8,#05050592,transparent)}nav{display:flex;align-items:center;justify-content:space-between;gap:24px}.logo{width:115px;height:66px;object-fit:contain}.links{display:flex;gap:26px;font:700 15px/1 "Barlow Condensed";text-transform:uppercase}.links a:hover{color:var(--yellow)}.actions{display:flex;align-items:center;gap:10px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border:1px solid #555b60;border-radius:4px;font:800 15px/1 "Barlow Condensed";text-transform:uppercase;letter-spacing:.04em}.btn.yellow{background:var(--yellow);border-color:var(--yellow);color:#080808}.lang{border:1px solid #3a3d40;padding:10px 12px;font:800 12px/1 "Barlow Condensed";background:#090a0b;color:#fff;cursor:pointer;border-radius:3px}.lang:hover{border-color:var(--yellow);color:var(--yellow)}
 .hero{min-height:100svh;position:relative;display:flex;align-items:center;overflow:hidden}.hero-bg{position:absolute;inset:0}.hero-bg img{height:100%;object-fit:cover;object-position:center}.hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#000 0%,#000e 29%,#0008 53%,#0002 78%),linear-gradient(0deg,#070707 0%,transparent 24%)}.hero-copy{position:relative;z-index:2;max-width:760px;padding:160px 0 90px}.kicker{font:800 16px/1 "Barlow Condensed";letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);margin-bottom:22px}.hero h1{font:900 clamp(76px,8vw,132px)/.78 "Barlow Condensed";text-transform:uppercase;letter-spacing:-.035em;margin:0 0 20px}.hero h1 span{color:var(--yellow)}.hero-sub{font:700 17px/1.3 "Barlow Condensed";letter-spacing:.17em;text-transform:uppercase}.hero p{max-width:620px;color:#b7b9b5;line-height:1.75}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.proof{display:grid;grid-template-columns:repeat(4,max-content);gap:27px;margin-top:34px}.proof b{display:block;font:800 17px/1 "Barlow Condensed";text-transform:uppercase}.proof small{color:#7d817c;text-transform:uppercase;font-size:10px;letter-spacing:.06em}
 .bar{border-block:1px solid #1c1f21;background:#0b0c0d}.bar-grid{display:grid;grid-template-columns:repeat(5,1fr)}.bar div{padding:22px;text-align:center;border-right:1px solid #1d2023}.bar div:last-child{border-right:0}.bar b{font:800 21px/1 "Barlow Condensed";text-transform:uppercase}.bar span{display:block;color:#797d78;font-size:11px;margin-top:6px}
 section{padding:90px 0;border-top:1px solid #151719}.eyebrow{font:800 13px/1 "Barlow Condensed";letter-spacing:.14em;text-transform:uppercase;color:var(--yellow)}h2{font:900 clamp(54px,6vw,82px)/.86 "Barlow Condensed";text-transform:uppercase;letter-spacing:-.025em;margin:12px 0 30px}h2 em{font-style:normal;color:var(--yellow)}
@@ -33,7 +33,7 @@ footer{border-top:1px solid #1d2023;padding:34px 0 44px;color:#737772;font-size:
 <header><div class="wrap"><nav>
 <a href="#home"><img class="logo" src="assets/logo.png" alt="Coach Buddy Fitness Hall"></a>
 <div class="links"><a href="#home">Home</a><a href="#programs">Programs</a><a href="#about">About</a><a href="#memberships">Memberships</a><a href="#app">Member App</a><a href="#contact">Contact</a></div>
-<div class="actions"><span class="lang">EN · GR</span><a class="btn yellow" href="#contact">Join now →</a></div>
+<div class="actions"><button class="lang" id="langToggle" type="button" aria-label="Switch language">GR</button><a class="btn yellow" href="#contact">Join now →</a></div>
 </nav></div></header>
 <main>
 <section class="hero" id="home"><div class="hero-bg"><img src="assets/hero.png" alt="Coach Buddy training"></div><div class="wrap"><div class="hero-copy">
@@ -66,4 +66,137 @@ footer{border-top:1px solid #1d2023;padding:34px 0 44px;color:#737772;font-size:
 <section id="contact"><div class="wrap contact"><div class="contact-box"><div class="eyebrow">Visit us</div><h2>Let's train<br><em>together.</em></h2><p><b>Ιδαλίου 22, Γέρι, Λευκωσία, Κύπρος 2200</b></p><p>Instagram: @coachbuddyfitnesshall</p><p>Member platform: My Fitness Trainer / COMPASS</p><div class="cta"><a class="btn yellow" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Idaliou+22+Geri+Cyprus">Get directions →</a><a class="btn" target="_blank" href="https://www.instagram.com/coachbuddyfitnesshall/">Instagram</a></div></div><a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Idaliou+22+Geri+Cyprus"><div><div class="eyebrow">Geri · Nicosia</div><h3>Coach Buddy<br>Fitness Hall</h3><p>Ιδαλίου 22 · Γέρι</p><span class="btn yellow">Open in Maps →</span></div></a></div></section>
 </main>
 <footer><div class="wrap footer"><div style="display:flex;gap:16px;align-items:center"><img src="assets/logo.png" alt="Coach Buddy"><span>Coach Buddy Fitness Hall<br>Website concept preview</span></div><div>Website concept by <b style="color:#ddd">ADSolutions</b></div></div></footer>
+
+<script>
+const gr = {
+"Home":"Αρχική",
+"Programs":"Προγράμματα",
+"About":"Σχετικά",
+"Memberships":"Συνδρομές",
+"Member App":"Εφαρμογή Μελών",
+"Contact":"Επικοινωνία",
+"Join now →":"Γίνε μέλος →",
+"Discipline today · stronger tomorrow":"Πειθαρχία σήμερα · πιο δυνατός αύριο",
+"Commit now.":"Δεσμεύσου τώρα.",
+"See results.":"Δες αποτελέσματα.",
+"Strength · Performance · Community":"Δύναμη · Απόδοση · Κοινότητα",
+"More than a gym. A focused training environment built around real coaching, consistency and measurable progress.":"Περισσότερο από ένα γυμναστήριο. Ένα περιβάλλον προπόνησης με πραγματική καθοδήγηση, συνέπεια και μετρήσιμη πρόοδο.",
+"Join Coach Buddy →":"Έλα στο Coach Buddy →",
+"View programs":"Δες τα προγράμματα",
+"Real coaching":"Πραγματική καθοδήγηση",
+"Expert support":"Εξειδικευμένη υποστήριξη",
+"Real community":"Πραγματική κοινότητα",
+"Train together":"Προπονούμαστε μαζί",
+"Real progress":"Πραγματική πρόοδος",
+"Track the work":"Παρακολούθησε την πρόοδο",
+"Real results":"Πραγματικά αποτελέσματα",
+"Built on consistency":"Χτισμένα στη συνέπεια",
+"Open Gym":"Ελεύθερη Προπόνηση",
+"Train on your terms":"Προπονήσου με τον δικό σου τρόπο",
+"Group Training":"Ομαδική Προπόνηση",
+"Energy · coaching · community":"Ενέργεια · καθοδήγηση · κοινότητα",
+"Personal":"Personal Training",
+"Focused on your goals":"Εστιασμένο στους στόχους σου",
+"Performance":"Απόδοση",
+"Strength & capacity":"Δύναμη & αντοχή",
+"Clinical Pilates":"Clinical Pilates",
+"Move better · feel stronger":"Κινήσου καλύτερα · νιώσε πιο δυνατός",
+"Our programs":"Τα προγράμματά μας",
+"Train your":"Προπονήσου με τον",
+"way":"τρόπο σου",
+"Train on your terms with premium equipment and a focused environment.":"Προπονήσου με τον δικό σου ρυθμό, με ποιοτικό εξοπλισμό και απόλυτη συγκέντρωση.",
+"Explore →":"Μάθε περισσότερα →",
+"Energy, motivation and expert coaching in a supportive community.":"Ενέργεια, κίνητρο και εξειδικευμένη καθοδήγηση μέσα σε μια υποστηρικτική κοινότητα.",
+"Personal Training":"Personal Training",
+"Focused one-to-one coaching built around your goals.":"Εξατομικευμένη καθοδήγηση ένας προς έναν, σχεδιασμένη γύρω από τους στόχους σου.",
+"Performance Training":"Performance Training",
+"Strength, capacity and structured performance-focused coaching.":"Δύναμη, αντοχή και δομημένη προπόνηση με επίκεντρο την απόδοση.",
+"Why Coach Buddy":"Γιατί Coach Buddy",
+"Real coaching.":"Πραγματική καθοδήγηση.",
+"Real results.":"Πραγματικά αποτελέσματα.",
+"Coach Buddy Fitness Hall combines serious training with real people and expert guidance. The website should feel exactly the same: focused, confident and built around progress.":"Το Coach Buddy Fitness Hall συνδυάζει σοβαρή προπόνηση, πραγματικούς ανθρώπους και εξειδικευμένη καθοδήγηση. Με επίκεντρο την πρόοδο, τη συνέπεια και την κοινότητα.",
+"Expert guidance":"Εξειδικευμένη καθοδήγηση",
+"Structured coaching":"Δομημένη προπόνηση",
+"Supportive community":"Υποστηρικτική κοινότητα",
+"Progress together":"Πρόοδος μαζί",
+"Purposeful training":"Προπόνηση με στόχο",
+"Built for results":"Σχεδιασμένη για αποτελέσματα",
+"Digital journey":"Ψηφιακή εμπειρία",
+"Booking & access":"Κρατήσεις & πρόσβαση",
+"Discipline builds":"Η πειθαρχία χτίζει",
+"freedom.":"ελευθερία.",
+"Find your":"Βρες αυτό που",
+"fit":"σου ταιριάζει",
+"Independent training with gym-floor access.":"Ανεξάρτητη προπόνηση με πρόσβαση στον χώρο του γυμναστηρίου.",
+"Gym access":"Πρόσβαση στο γυμναστήριο",
+"Member app access":"Πρόσβαση στην εφαρμογή μελών",
+"Flexible training":"Ευέλικτη προπόνηση",
+"Enquire →":"Επικοινώνησε →",
+"Coach-led sessions built around consistency and community.":"Προπονήσεις με καθοδήγηση coach, βασισμένες στη συνέπεια και την κοινότητα.",
+"Group sessions":"Ομαδικά sessions",
+"App booking":"Κράτηση μέσω εφαρμογής",
+"Structured weekly training":"Δομημένη εβδομαδιαία προπόνηση",
+"Personal & Semi":"Personal & Semi-Personal",
+"More focused support for specific goals and progress.":"Πιο στοχευμένη υποστήριξη για συγκεκριμένους στόχους και πρόοδο.",
+"Tailored coaching":"Εξατομικευμένη καθοδήγηση",
+"Small-group options":"Επιλογές μικρών ομάδων",
+"Progress monitoring":"Παρακολούθηση προόδου",
+"Member app":"Εφαρμογή μελών",
+"Your fitness.":"Η προπόνησή σου.",
+"Anywhere.":"Παντού.",
+"Coach Buddy already uses a digital member platform. The website can connect new and existing members directly to registration, bookings and account access through My Fitness Trainer / COMPASS.":"Το Coach Buddy χρησιμοποιεί ήδη ψηφιακή πλατφόρμα μελών. Η ιστοσελίδα μπορεί να συνδέει νέα και υφιστάμενα μέλη με εγγραφή, κρατήσεις και πρόσβαση στον λογαριασμό μέσω My Fitness Trainer / COMPASS.",
+"Register":"Εγγραφή",
+"Book sessions":"Κράτηση sessions",
+"Track progress":"Παρακολούθηση προόδου",
+"Manage access":"Διαχείριση πρόσβασης",
+"Member Access":"Πρόσβαση Μελών",
+"Book a class":"Κράτηση μαθήματος",
+"My bookings":"Οι κρατήσεις μου",
+"Progress":"Πρόοδος",
+"Membership":"Συνδρομή",
+"Real environment":"Πραγματικός χώρος",
+"Built for":"Χτισμένο για",
+"progress":"πρόοδο",
+"Focus. Progress.":"Συγκέντρωση. Πρόοδος.",
+"Coaching":"Καθοδήγηση",
+"Strength":"Δύναμη",
+"Semi-Personal":"Semi-Personal",
+"Visit us":"Επισκέψου μας",
+"Let's train":"Πάμε να προπονηθούμε",
+"together.":"μαζί.",
+"Member platform: My Fitness Trainer / COMPASS":"Πλατφόρμα μελών: My Fitness Trainer / COMPASS",
+"Get directions →":"Οδηγίες →",
+"Open in Maps →":"Άνοιγμα στους Χάρτες →",
+"Website concept preview":"Προεπισκόπηση ιστοσελίδας",
+"Website concept by":"Website concept από",
+"ADSolutions concept preview · not the live Coach Buddy website":"ADSolutions concept preview · όχι η επίσημη ιστοσελίδα του Coach Buddy"
+};
+
+const en = Object.fromEntries(Object.entries(gr).map(([k,v])=>[v,k]));
+let currentLang = "en";
+
+function translatePage(target){
+  const map = target === "gr" ? gr : en;
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while(walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node=>{
+    const raw = node.nodeValue;
+    const trimmed = raw.trim();
+    if(map[trimmed]){
+      const start = raw.match(/^\s*/)[0];
+      const end = raw.match(/\s*$/)[0];
+      node.nodeValue = start + map[trimmed] + end;
+    }
+  });
+  currentLang = target;
+  document.documentElement.lang = target === "gr" ? "el" : "en";
+  const btn = document.getElementById("langToggle");
+  btn.textContent = target === "gr" ? "EN" : "GR";
+  btn.setAttribute("aria-label", target === "gr" ? "Switch to English" : "Αλλαγή στα Ελληνικά");
+}
+
+document.getElementById("langToggle").addEventListener("click",()=>translatePage(currentLang === "en" ? "gr" : "en"));
+</script>
+
 </body></html>
